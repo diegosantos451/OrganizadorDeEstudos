@@ -1,0 +1,31 @@
+
+{% extends 'tarefas/base.html' %}
+
+{% block titulo %}Nova tarefa | Organizador de Estudos{% endblock %}
+
+{% block conteudo %}
+
+<div class="formulario-container">
+    <div class="formulario-card">
+
+        <h1>Nova tarefa</h1>
+        <p class="subtitulo">Adicione uma atividade à sua rotina de estudos.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="botao">
+                Salvar tarefa
+            </button>
+        </form>
+
+        <p class="texto-link">
+            <a href="{% url 'lista_tarefas' %}">Voltar para minhas tarefas</a>
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}

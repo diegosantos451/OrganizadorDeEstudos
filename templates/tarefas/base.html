@@ -1,0 +1,49 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Organizador de Estudos{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icone">OE</span>
+                <span>Organizador de Estudos</span>
+            </a>
+
+            <nav>
+    <a href="/">Início</a>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'lista_tarefas' %}">Minhas tarefas</a>
+
+        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">Sair</button>
+        </form>
+    {% else %}
+        <a href="{% url 'cadastro' %}">Criar conta</a>
+        <a href="{% url 'login' %}">Entrar</a>
+    {% endif %}
+</nav>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+
+    <footer class="rodape">
+        <p>Organizador de Estudos © 2026</p>
+        <p>Organize seus estudos. Alcance seus objetivos.</p>
+    </footer>
+
+</body>
+</html>

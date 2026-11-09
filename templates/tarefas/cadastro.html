@@ -1,0 +1,30 @@
+
+{% extends 'tarefas/base.html' %}
+
+{% block titulo %}Cadastro | Organizador de Estudos{% endblock %}
+
+{% block conteudo %}
+
+<div class="formulario-container">
+    <div class="formulario-card">
+        <h1>Crie sua conta</h1>
+        <p class="subtitulo">Comece a organizar seus estudos!</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="botao">
+                Criar minha conta
+            </button>
+        </form>
+
+        <p class="texto-link">
+            Já possui uma conta?
+            <a href="{% url 'login' %}">Entrar</a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'tarefas/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Organizador de Estudos</h1>
+
+        <p>Organize suas tarefas e acompanhe seu progresso nos estudos.</p>
+
+        <a href="{% url 'cadastro' %}">Criar conta</a>
+        <a href="{% url 'login' %}">Entrar</a>
+    </div>
+{% endblock %}
