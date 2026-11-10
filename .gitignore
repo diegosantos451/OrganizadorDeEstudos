@@ -14,3 +14,6 @@ db.sqlite3
 
 # Arquivos do VS Code
 .vscode/
+
+.coverage
+htmlcov/
