@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -299,3 +298,46 @@ nav a:hover {
         width: 100%;
     }
 }
+
+#contraste {
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    background: white;
+    color: #19447f;
+    padding: 8px 12px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.topo .container, nav { flex-wrap: wrap; }
+nav { align-items: center; justify-content: center; }
+.tarefa-info { min-width: 0; overflow-wrap: anywhere; }
+.tarefa-info .estado-tarefa { font-size: .875rem; font-weight: bold; color: #37465b; }
+:focus-visible { outline: 3px solid #19447f; outline-offset: 3px; }
+
+.alto-contraste { color-scheme: dark; }
+.alto-contraste body { background: #101010; color: white; }
+.alto-contraste :is(.topo, .tarefa-card, .formulario-card, .vazio) {
+    background: #191919;
+    border: 1px solid #ddd;
+    color: white;
+}
+html.alto-contraste :is(h1, h2, h3, p, small, label, ul, .rodape) { color: white; }
+.alto-contraste .concluida { color: white !important; }
+html.alto-contraste :is(a, a:hover) { color: #ffe566; text-decoration: underline; }
+.alto-contraste :is(button, #contraste, .botao-link, .logo-icone) {
+    background: #ffe566;
+    color: #101010;
+    border: 2px solid #ffe566;
+    font-weight: bold;
+}
+.alto-contraste .botao-excluir { background: #191919; color: white; border: 2px solid white; }
+.alto-contraste :is(input, textarea, select) {
+    background: black;
+    color: white;
+    border: 2px solid white;
+    max-width: 100%;
+}
+.alto-contraste :focus-visible { outline: 3px solid #71edff; outline-offset: 3px; }
+.alto-contraste .tarefa-info .estado-tarefa { color: white; }
+html.alto-contraste a.botao-link { color: #101010; }

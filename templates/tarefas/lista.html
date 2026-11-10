@@ -27,6 +27,7 @@
                         {{ tarefa.titulo }}
                     </h3>
 
+                    <p class="estado-tarefa">{% if tarefa.concluida %}Concluída{% else %}Pendente{% endif %}</p>
                     <p>{{ tarefa.descricao|default:"Sem descrição." }}</p>
 
                     {% if tarefa.data_conclusao %}

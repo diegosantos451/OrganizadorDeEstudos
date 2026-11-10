@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block titulo %}Organizador de Estudos{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/contraste.js' %}" defer></script>
 </head>
 <body>
 
@@ -16,6 +16,10 @@
                 <span class="logo-icone">OE</span>
                 <span>Organizador de Estudos</span>
             </a>
+
+            <button type="button" id="contraste" aria-pressed="false" hidden>
+                Alto contraste <span aria-hidden="true" id="estado-contraste"></span>
+            </button>
 
             <nav>
     <a href="/">Início</a>
